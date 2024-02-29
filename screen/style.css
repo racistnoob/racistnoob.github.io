@@ -1,13 +1,5 @@
 body {
-    margin: 0px;
-    padding: 0px;
-    background-size: 20%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     overflow: hidden;
-}
-
-video {
-    overflow: hidden;
+    margin: 0;
+    filter: hue-rotate(2deg);
 }
