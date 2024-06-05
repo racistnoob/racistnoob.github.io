@@ -1,5 +1,17 @@
 body {
     overflow: hidden;
     margin: 0;
-    filter: hue-rotate(2deg);
+    /* filter: hue-rotate(2deg); */
+}
+
+
+.bg {
+  /* The image used */
+  background-image: url("image.png");
+
+  /* Full height */
+  height: 100%;
+
+  background-repeat: no-repeat;
+  background-size: contain;
 }
