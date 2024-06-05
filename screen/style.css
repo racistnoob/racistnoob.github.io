@@ -3,15 +3,3 @@ body {
     margin: 0;
     /* filter: hue-rotate(2deg); */
 }
-
-
-.bg {
-  /* The image used */
-  background-image: url("https://racistnoob.github.io/screen/image.png");
-
-  /* Full height */
-  height: 100%;
-
-  background-repeat: no-repeat;
-  background-size: contain;
-}
