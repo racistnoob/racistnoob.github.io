@@ -1,5 +1,5 @@
 body {
     overflow: hidden;
     margin: 0;
-    /* filter: hue-rotate(2deg); */
+    filter: hue-rotate(2deg);
 }
